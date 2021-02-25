@@ -29,12 +29,15 @@ def print_board():
 def move(direction):
     if direction == "up":
         for col in range(4):
+            print("col", col, [tiles[0][col], tiles[1][col], tiles[2][col], tiles[3][col]])
             # if first in column equals second in column
             if tiles[0][col] == tiles[1][col]:
                 tiles[0][col] = tiles[0][col] * 2
                 tiles[3][col] = 0
+                print("third in column equals fourth in column", tiles[2][col] == tiles[3][col], " third", tiles[2][col], " fourth", tiles[3][col])
                 # if third in column equals fourth in column
                 if tiles[2][col] == tiles[3][col]:
+                    print("EQUALS", tiles[2][col])
                     tiles[1][col] = tiles[2][col] * 2
                     tiles[2][col] = 0
                 else:
